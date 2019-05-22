@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Form</title>
+</head>
+<body>
+    <a href="/">Back to Homepage</a>
+
+    <form action="#" th:action="@{/process_department}" th:object="${department}" method="post">
+        <input type="hidden" th:field="*{departmentID}" />
+
+        Department: <input type="text" th:field="*{departmentName}"><br />
+        <span th:if="${#fields.hasErrors('departmentName')}" th:errors="*{departmentName}"></span><br />
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

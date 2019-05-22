@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+</head>
+<body>
+<a href="/employeelist">Show All Employees</a>
+
+Name: <span th:text="${employee.employeeName}"></span><br />
+Position: <span th:text="${employee.employeePosition}"></span><br />
+Department: <span th:text="${employee.department.departmentName}"></span><br />
+</body>
+</html>

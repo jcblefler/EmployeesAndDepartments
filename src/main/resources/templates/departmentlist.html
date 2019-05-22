@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department List</title>
+</head>
+<body>
+    <a href="/">Back to Homepage
+    <a href="/adddepartment">Add a Department</a>
+
+    <table>
+        <tr th:each="department : ${departments}">
+            <td th:text="${department.departmentName}"></td>
+            <td>
+                <a th:href="@{update/{id}(id=${department.departmentID})}">Update</a>
+                <a th:href="@{detail/{id}(id=${department.departmentID})}">Details</a>
+                <a th:href="@{delete/{id}(id=${department.departmentID})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
