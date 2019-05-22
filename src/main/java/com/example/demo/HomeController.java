@@ -87,8 +87,25 @@ public class HomeController {
     @RequestMapping("/delete/{id}")
     public String delDepartment(@PathVariable("id") long id){
         departmentRepository.deleteById(id);
-        return "departmentform";
+        return "index";
     }
 
+    @RequestMapping("/detail_employee/{id}")
+    public String showEmployee(@PathVariable("id") long id, Model model){
+        model.addAttribute("employee", employeeRepository.findById(id).get());
+        return "showemployee";
+    }
 
+    @RequestMapping("/update_employee/{id}")
+    public String updateEmployee(@PathVariable("id") long id, Model model){
+        model.addAttribute("employee", employeeRepository.findById(id).get());
+        model.addAttribute("departments",departmentRepository.findAll());
+        return "employeeform";
+    }
+
+    @RequestMapping("/delete_employee/{id}")
+    public String delEmployee(@PathVariable("id") long id){
+        employeeRepository.deleteById(id);
+        return "index";
+    }
 }

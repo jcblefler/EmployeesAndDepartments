@@ -19,9 +19,9 @@
         <td th:text="${employee.employeePosition}"></td>
         <td th:text="${employee.department.departmentName}"></td>
         <td>
-            <a th:href="@{update/{id}(id=${employee.employeeID})}">Update</a>
-            <a th:href="@{detail/{id}(id=${employee.employeeID})}">Details</a>
-            <a th:href="@{delete/{id}(id=${employee.employeeID})}">Delete</a>
+            <a th:href="@{update_employee/{id}(id=${employee.employeeID})}">Update</a>
+            <a th:href="@{detail_employee/{id}(id=${employee.employeeID})}">Details</a>
+            <a th:href="@{delete_employee/{id}(id=${employee.employeeID})}">Delete</a>
         </td>
     </tr>
 </table>
