@@ -21,7 +21,10 @@ public class HomeController {
     EmployeeRepository employeeRepository;
 
     @RequestMapping("/")
-    public String home(){
+    public String home(Model model){
+        model.addAttribute("departments", departmentRepository.findAll());
+        model.addAttribute("employees", employeeRepository.findAll());
+
         return "index";
     }
 
